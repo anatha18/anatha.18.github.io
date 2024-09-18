@@ -1,4 +1,3 @@
-<!-- Tambahkan ini di file README.md -->
 <a href="https://websitepribadi.com" class="btn">Kunjungi Website Saya</a>
 
 <style>
