@@ -1,69 +1,59 @@
-/* Mengatur latar belakang video */
-.video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1; /* Pastikan video berada di belakang konten */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Agar video memenuhi layar tanpa distorsi */
+body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  overflow: hidden;
 }
 
-/* Container untuk konten */
-.content {
-    position: absolute; /* Gunakan absolute untuk memposisikan relatif terhadap parent */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Pusatkan konten secara vertikal dan horizontal */
-    z-index: 1; /* Pastikan konten berada di atas video */
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan untuk teks */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    max-width: 600px;
-    margin: 0 auto;
+.intro {
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
 }
 
-/* Gaya untuk teks judul */
 h1 {
-    font-size: 36px;
-    color: #ffffff;
-    text-shadow: 3px 3px 5px #000000;
+  font-size: 3em;
+  color: #ff0066;
+  text-shadow: 0px 0px 10px rgba(255, 0, 102, 0.8);
 }
 
-/* Gaya untuk paragraf */
 p {
-    color: #cccccc;
-    font-size: 18px;
-    margin: 20px 0;
+  font-size: 1.2em;
+  margin: 10px 0 20px;
+  color: #ddd;
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
 }
 
-/* Gaya tombol bertema game */
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #ff6347;
-    border: 3px solid #ffffff;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ff0066;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(255, 0, 102, 0.7);
+  transition: transform 0.2s;
 }
 
-.btn:hover {
-    background-color: #e53e3e;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #ffffff;
+button:hover {
+  transform: scale(1.1);
 }
 
-/* Font spesial bertema game */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
