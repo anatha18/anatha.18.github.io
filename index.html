@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kunjungi Website Saya</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Game Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="video-background">
-    <video autoplay muted loop playsinline>
-      <source src="asset/cherry-blossom.1920x1080.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <div class="intro">
+    <h1>Welcome to My World</h1>
+    <p>Explore the universe of game development and innovation</p>
+    <button onclick="startPortfolio()">Enter</button>
   </div>
 
-  <div class="content">
-    <h1>Welcome to My Game World!</h1>
-    <p>Click the button below to explore my personal website:</p>
-    <a href="https://websitepribadi.com" class="btn">Enter the World</a>
-  </div>
+  <script>
+    function startPortfolio() {
+      window.location.href = 'portfolio.html';  // Redirect to portfolio page
+    }
+  </script>
 </body>
 </html>
