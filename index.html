@@ -3,181 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameDev Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Game Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <!-- Particle Effect Container -->
+    <div id="particles-js"></div>
 
-    <header>
-        <nav>
-            <div class="logo">
-                <span class="gamepad-icon"><i class="fas fa-gamepad"></i></span>
-                <span class="logo-text">GameDev</span>
-            </div>
-            <div class="nav-links">
-                <a href="#home"><i class="fas fa-home"></i> Home</a>
-                <a href="#about"><i class="fas fa-user"></i> About</a>
-                <a href="#projects"><i class="fas fa-gamepad"></i> Projects</a>
-                <a href="#skills"><i class="fas fa-code"></i> Skills</a>
-                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-            </div>
-            <div class="menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-progress">
+            <div class="progress-bar"></div>
+            <span class="progress-text">Loading... <span class="progress-percent">0%</span></span>
+        </div>
+    </div>
 
-    <section id="home" class="hero">
+    <!-- Navigation -->
+    <nav class="game-nav">
+        <div class="nav-brand">
+            <div class="game-logo">
+                <i class="fas fa-gamepad"></i>
+                <span class="glitch-text" data-text="GAMEDEV">GAMEDEV</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-item active" data-text="HOME">HOME</a>
+            <a href="#about" class="nav-item" data-text="ABOUT">ABOUT</a>
+            <a href="#projects" class="nav-item" data-text="PROJECTS">PROJECTS</a>
+            <a href="#skills" class="nav-item" data-text="SKILLS">SKILLS</a>
+            <a href="#contact" class="nav-item" data-text="CONTACT">CONTACT</a>
+        </div>
+        <div class="menu-toggle">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
         <div class="hero-content">
-            <div class="glitch" data-text="Game Developer">Game Developer</div>
-            <p class="typing-text">Bringing virtual worlds to life...</p>
+            <h1 class="glitch-title" data-text="GAME DEVELOPER">GAME DEVELOPER</h1>
+            <p class="cyber-text">Bringing Virtual Worlds to Life</p>
             <div class="hero-buttons">
-                <button class="cta-button" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
-                    Tentang Saya <i class="fas fa-arrow-right"></i>
-                </button>
-                <button class="secondary-button" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-                    Lihat Projects <i class="fas fa-gamepad"></i>
+                <button class="cyber-button">
+                    <span>VIEW PORTFOLIO</span>
+                    <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
         </div>
         <div class="scroll-indicator">
-            <div class="mouse"></div>
-            <p>Scroll Down</p>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrows">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <h2 class="section-title glitch" data-text="About Me">About Me</h2>
-        <div class="about-content">
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <h2 class="glitch-text" data-text="ABOUT ME">ABOUT ME</h2>
+        </div>
+        <div class="about-container">
             <div class="about-image">
-                <img src="/api/placeholder/400/400" alt="Profile Picture">
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-itch-io"></i></a>
+                <div class="image-frame">
+                    <img src="/api/placeholder/400/400" alt="Profile">
+                    <div class="frame-corners">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
                 </div>
             </div>
-            <div class="about-text">
-                <h3>Hi, Saya <span class="highlight">Nama Anda</span></h3>
-                <p>Game Developer & Creative Designer</p>
-                <div class="about-details">
-                    <p>Saya adalah seorang game developer yang passionate dalam menciptakan pengalaman interaktif yang unik. 
-                    Dengan pengalaman dalam berbagai game engine dan tools, saya fokus pada pengembangan game yang tidak 
-                    hanya menyenangkan tetapi juga memberikan dampak positif bagi pemain.</p>
-                    <div class="quick-info">
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Lokasi Anda</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Pendidikan Anda</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>X+ Tahun Pengalaman</span>
-                        </div>
+            <div class="about-content">
+                <div class="about-header">
+                    <h3>Hi, I'm <span class="highlight">Your Name</span></h3>
+                    <p>Game Developer & Designer</p>
+                </div>
+                <div class="about-text">
+                    <p>Passionate game developer with expertise in creating immersive gaming experiences. 
+                    Specializing in [Game Engine] development with a focus on [Game Genre] games.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Games Created</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Game Jams</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="projects">
-        <h2 class="section-title glitch" data-text="Projects">Projects</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="section-header">
+            <h2 class="glitch-text" data-text="LATEST GAMES">LATEST GAMES</h2>
+        </div>
         <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="/api/placeholder/400/200" alt="Game 1">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-play"></i> Demo</a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source</a>
+            <!-- Game Card 1 -->
+            <div class="game-card">
+                <div class="game-preview">
+                    <img src="/api/placeholder/400/300" alt="Game 1">
+                    <div class="game-overlay">
+                        <div class="game-actions">
+                            <a href="#" class="game-button">PLAY DEMO</a>
+                            <a href="#" class="game-button">VIEW CODE</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-info">
-                    <h3>Adventure Quest</h3>
-                    <p>2D Action RPG dengan sistem pertarungan yang dinamis</p>
-                    <div class="project-tags">
-                        <span class="tag">Unity</span>
-                        <span class="tag">C#</span>
-                        <span class="tag">2D</span>
+                <div class="game-info">
+                    <h3>Cyber Quest 2077</h3>
+                    <p>Action RPG with cyberpunk elements</p>
+                    <div class="game-tags">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>3D</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="/api/placeholder/400/200" alt="Game 2">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-play"></i> Demo</a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source</a>
+            <!-- Game Card 2 -->
+            <div class="game-card">
+                <div class="game-preview">
+                    <img src="/api/placeholder/400/300" alt="Game 2">
+                    <div class="game-overlay">
+                        <div class="game-actions">
+                            <a href="#" class="game-button">PLAY DEMO</a>
+                            <a href="#" class="game-button">VIEW CODE</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-info">
-                    <h3>Puzzle Master</h3>
-                    <p>Game puzzle dengan mekanik fisika yang unik</p>
-                    <div class="project-tags">
-                        <span class="tag">Unreal</span>
-                        <span class="tag">Blueprint</span>
-                        <span class="tag">3D</span>
+                <div class="game-info">
+                    <h3>Space Warriors</h3>
+                    <p>Multiplayer space combat game</p>
+                    <div class="game-tags">
+                        <span>Unreal</span>
+                        <span>C++</span>
+                        <span>Multiplayer</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Project Card 3 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="/api/placeholder/400/200" alt="Game 3">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-play"></i> Demo</a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source</a>
+            <!-- Game Card 3 -->
+            <div class="game-card">
+                <div class="game-preview">
+                    <img src="/api/placeholder/400/300" alt="Game 3">
+                    <div class="game-overlay">
+                        <div class="game-actions">
+                            <a href="#" class="game-button">PLAY DEMO</a>
+                            <a href="#" class="game-button">VIEW CODE</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-info">
-                    <h3>Space Shooter VR</h3>
-                    <p>Game VR dengan pengalaman immersive</p>
-                    <div class="project-tags">
-                        <span class="tag">Unity</span>
-                        <span class="tag">VR</span>
-                        <span class="tag">3D</span>
+                <div class="game-info">
+                    <h3>Pixel Adventures</h3>
+                    <p>Retro-style platformer adventure</p>
+                    <div class="game-tags">
+                        <span>Godot</span>
+                        <span>GDScript</span>
+                        <span>2D</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="skills">
-        <h2 class="section-title glitch" data-text="Skills">Skills</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="section-header">
+            <h2 class="glitch-text" data-text="SKILL TREE">SKILL TREE</h2>
+        </div>
         <div class="skills-container">
             <div class="skill-category">
                 <h3>Game Engines</h3>
-                <div class="skill-items">
-                    <div class="skill-item" data-skill="Unity">
+                <div class="skill-tree">
+                    <div class="skill-node" data-level="90">
                         <i class="fab fa-unity"></i>
                         <span>Unity</span>
-                        <div class="skill-progress">
-                            <div class="progress" style="width: 90%"></div>
+                        <div class="skill-level">
+                            <div class="level-bar"></div>
                         </div>
                     </div>
-                    <div class="skill-item" data-skill="Unreal">
+                    <div class="skill-node" data-level="75">
                         <i class="fas fa-gamepad"></i>
-                        <span>Unreal Engine</span>
-                        <div class="skill-progress">
-                            <div class="progress" style="width: 75%"></div>
+                        <span>Unreal</span>
+                        <div class="skill-level">
+                            <div class="level-bar"></div>
                         </div>
                     </div>
                 </div>
@@ -185,39 +206,19 @@
 
             <div class="skill-category">
                 <h3>Programming</h3>
-                <div class="skill-items">
-                    <div class="skill-item" data-skill="C#">
+                <div class="skill-tree">
+                    <div class="skill-node" data-level="85">
                         <i class="fas fa-code"></i>
                         <span>C#</span>
-                        <div class="skill-progress">
-                            <div class="progress" style="width: 85%"></div>
+                        <div class="skill-level">
+                            <div class="level-bar"></div>
                         </div>
                     </div>
-                    <div class="skill-item" data-skill="C++">
+                    <div class="skill-node" data-level="80">
                         <i class="fas fa-code"></i>
                         <span>C++</span>
-                        <div class="skill-progress">
-                            <div class="progress" style="width: 70%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Game Design</h3>
-                <div class="skill-items">
-                    <div class="skill-item" data-skill="Level Design">
-                        <i class="fas fa-map"></i>
-                        <span>Level Design</span>
-                        <div class="skill-progress">
-                            <div class="progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-skill="UI/UX">
-                        <i class="fas fa-paint-brush"></i>
-                        <span>UI/UX Design</span>
-                        <div class="skill-progress">
-                            <div class="progress" style="width: 75%"></div>
+                        <div class="skill-level">
+                            <div class="level-bar"></div>
                         </div>
                     </div>
                 </div>
@@ -225,103 +226,128 @@
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2 class="section-title glitch" data-text="Contact">Contact</h2>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2 class="glitch-text" data-text="START A QUEST">START A QUEST</h2>
+        </div>
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Let's Create Something Amazing!</h3>
-                <p>Tertarik untuk berkolaborasi atau memiliki project yang ingin didiskusikan?</p>
                 <div class="contact-details">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>email@example.com</span>
+                        <span>your.email@example.com</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+62 xxx-xxxx-xxxx</span>
+                        <i class="fab fa-discord"></i>
+                        <span>YourDiscordTag</span>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Lokasi Anda</span>
-                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-itch-io"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" id="name" required>
-                    <label for="name">Nama</label>
+                <div class="form-field">
+                    <input type="text" required>
+                    <label>Your Name</label>
+                    <span class="focus-border"></span>
                 </div>
-                <div class="form-group">
-                    <input type="email" id="email" required>
-                    <label for="email">Email</label>
+                <div class="form-field">
+                    <input type="email" required>
+                    <label>Your Email</label>
+                    <span class="focus-border"></span>
                 </div>
-                <div class="form-group">
-                    <textarea id="message" rows="5" required></textarea>
-                    <label for="message">Pesan</label>
+                <div class="form-field">
+                    <textarea required></textarea>
+                    <label>Your Message</label>
+                    <span class="focus-border"></span>
                 </div>
-                <button type="submit" class="submit-btn">
-                    Kirim Pesan <i class="fas fa-paper-plane"></i>
+                <button type="submit" class="cyber-button">
+                    <span>SEND MESSAGE</span>
+                    <i class="fas fa-paper-plane"></i>
                 </button>
             </form>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="game-footer">
         <div class="footer-content">
+            <p>&copy; 2024 Game Developer Portfolio</p>
             <div class="footer-social">
                 <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-itch-io"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
-            <p>&copy; 2024 GameDev Portfolio. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Cursor Animation
-        const cursor = document.querySelector('.cursor');
-        const follower = document.querySelector('.cursor-follower');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            setTimeout(() => {
-                follower.style.left = e.clientX + 'px';
-                follower.style.top = e.clientY + 'px';
-            }, 100);
+        // Loading Screen
+        window.addEventListener('load', () => {
+            let progress = 0;
+            const progressBar = document.querySelector('.progress-bar');
+            const progressText = document.querySelector('.progress-percent');
+            const loadingScreen = document.querySelector('.loading-screen');
+
+            const interval = setInterval(() => {
+                progress += 1;
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `${progress}%`;
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 500);
+                }
+            }, 20);
+        });
+
+        // Particles.js Config
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80 },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2
+                }
+            }
         });
 
         // Mobile Menu Toggle
-        const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-            navLinks.classList.toggle('active');
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
-
-        // Scroll Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        });
-
-        document.querySelectorAll('.project-card, .skill-item, .about-content').forEach((el) => observer.observe(el));
     </script>
 </body>
 </html>
