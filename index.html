@@ -103,7 +103,121 @@
             max-width: 600px;
         }
 
-        /* Additional sections here (Projects, Skills, Contact, Footer) */
+        /* Projects Section */
+        .projects {
+            padding: var(--section-padding);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: var(--section-padding);
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+        }
+
+        button {
+            padding: 1rem 2rem;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff5555;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
     </style>
 </head>
 <body>
@@ -128,7 +242,80 @@
         </div>
     </section>
 
-    <!-- Add other sections here: Projects, Skills, Contact, Footer -->
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="/api/placeholder/400/200" alt="Game 1" class="project-image">
+                <div class="project-info">
+                    <h3>Adventure Game</h3>
+                    <p>Game petualangan 2D dengan grafis pixel art</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="/api/placeholder/400/200" alt="Game 2" class="project-image">
+                <div class="project-info">
+                    <h3>Puzzle Game</h3>
+                    <p>Game puzzle dengan mekanik unik</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="/api/placeholder/400/200" alt="Game 3" class="project-image">
+                <div class="project-info">
+                    <h3>Mobile RPG</h3>
+                    <p>RPG untuk platform mobile</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>Game Design</h3>
+                <p>Perancangan mekanik game dan level design</p>
+            </div>
+            <div class="skill-card">
+                <h3>Unity</h3>
+                <p>Pengembangan game menggunakan Unity Engine</p>
+            </div>
+            <div class="skill-card">
+                <h3>C#</h3>
+                <p>Pemrograman game dengan C#</p>
+            </div>
+            <div class="skill-card">
+                <h3>Pixel Art</h3>
+                <p>Pembuatan aset visual 2D</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GameDev Portfolio</p>
+    </footer>
 </body>
 </html>
