@@ -4,313 +4,324 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameDev Portfolio</title>
-    <style>
-        /* Reset dan variabel */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #2a2a2a;
-            --accent-color: #ff3e3e;
-            --text-color: #ffffff;
-            --section-padding: 4rem 2rem;
-        }
-
-        /* Base styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--primary-color);
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: rgba(0, 0, 0, 0.9);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                        url('/api/placeholder/1920/1080') center/cover;
-            padding: var(--section-padding);
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding: var(--section-padding);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-info h3 {
-            margin-bottom: 1rem;
-        }
-
-        /* Skills Section */
-        .skills {
-            padding: var(--section-padding);
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        .skills-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: scale(1.05);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: var(--section-padding);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: grid;
-            gap: 0.5rem;
-        }
-
-        input, textarea {
-            padding: 0.8rem;
-            border: none;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-color);
-        }
-
-        button {
-            padding: 1rem 2rem;
-            background-color: var(--accent-color);
-            color: var(--text-color);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #ff5555;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <header>
         <nav>
-            <div class="logo">GameDev</div>
+            <div class="logo">
+                <span class="gamepad-icon"><i class="fas fa-gamepad"></i></span>
+                <span class="logo-text">GameDev</span>
+            </div>
             <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
+                <a href="#home"><i class="fas fa-home"></i> Home</a>
+                <a href="#about"><i class="fas fa-user"></i> About</a>
+                <a href="#projects"><i class="fas fa-gamepad"></i> Projects</a>
+                <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            <div class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Game Developer Portfolio</h1>
-            <p>Membuat game yang menarik dan inovatif</p>
-            <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-                Lihat Projects
-            </button>
+            <div class="glitch" data-text="Game Developer">Game Developer</div>
+            <p class="typing-text">Bringing virtual worlds to life...</p>
+            <div class="hero-buttons">
+                <button class="cta-button" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                    Tentang Saya <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="secondary-button" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                    Lihat Projects <i class="fas fa-gamepad"></i>
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-title glitch" data-text="About Me">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="/api/placeholder/400/400" alt="Profile Picture">
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-itch-io"></i></a>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>Hi, Saya <span class="highlight">Nama Anda</span></h3>
+                <p>Game Developer & Creative Designer</p>
+                <div class="about-details">
+                    <p>Saya adalah seorang game developer yang passionate dalam menciptakan pengalaman interaktif yang unik. 
+                    Dengan pengalaman dalam berbagai game engine dan tools, saya fokus pada pengembangan game yang tidak 
+                    hanya menyenangkan tetapi juga memberikan dampak positif bagi pemain.</p>
+                    <div class="quick-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Lokasi Anda</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Pendidikan Anda</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>X+ Tahun Pengalaman</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="projects" class="projects">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title glitch" data-text="Projects">Projects</h2>
         <div class="projects-grid">
-            <!-- Project 1 -->
+            <!-- Project Card 1 -->
             <div class="project-card">
-                <img src="/api/placeholder/400/200" alt="Game 1" class="project-image">
+                <div class="project-image">
+                    <img src="/api/placeholder/400/200" alt="Game 1">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-play"></i> Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-info">
-                    <h3>Adventure Game</h3>
-                    <p>Game petualangan 2D dengan grafis pixel art</p>
+                    <h3>Adventure Quest</h3>
+                    <p>2D Action RPG dengan sistem pertarungan yang dinamis</p>
+                    <div class="project-tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">2D</span>
+                    </div>
                 </div>
             </div>
-            <!-- Project 2 -->
+
+            <!-- Project Card 2 -->
             <div class="project-card">
-                <img src="/api/placeholder/400/200" alt="Game 2" class="project-image">
+                <div class="project-image">
+                    <img src="/api/placeholder/400/200" alt="Game 2">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-play"></i> Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-info">
-                    <h3>Puzzle Game</h3>
-                    <p>Game puzzle dengan mekanik unik</p>
+                    <h3>Puzzle Master</h3>
+                    <p>Game puzzle dengan mekanik fisika yang unik</p>
+                    <div class="project-tags">
+                        <span class="tag">Unreal</span>
+                        <span class="tag">Blueprint</span>
+                        <span class="tag">3D</span>
+                    </div>
                 </div>
             </div>
-            <!-- Project 3 -->
+
+            <!-- Project Card 3 -->
             <div class="project-card">
-                <img src="/api/placeholder/400/200" alt="Game 3" class="project-image">
+                <div class="project-image">
+                    <img src="/api/placeholder/400/200" alt="Game 3">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-play"></i> Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-info">
-                    <h3>Mobile RPG</h3>
-                    <p>RPG untuk platform mobile</p>
+                    <h3>Space Shooter VR</h3>
+                    <p>Game VR dengan pengalaman immersive</p>
+                    <div class="project-tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">VR</span>
+                        <span class="tag">3D</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="skills" class="skills">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title glitch" data-text="Skills">Skills</h2>
         <div class="skills-container">
-            <div class="skill-card">
+            <div class="skill-category">
+                <h3>Game Engines</h3>
+                <div class="skill-items">
+                    <div class="skill-item" data-skill="Unity">
+                        <i class="fab fa-unity"></i>
+                        <span>Unity</span>
+                        <div class="skill-progress">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="Unreal">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Unreal Engine</span>
+                        <div class="skill-progress">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Programming</h3>
+                <div class="skill-items">
+                    <div class="skill-item" data-skill="C#">
+                        <i class="fas fa-code"></i>
+                        <span>C#</span>
+                        <div class="skill-progress">
+                            <div class="progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="C++">
+                        <i class="fas fa-code"></i>
+                        <span>C++</span>
+                        <div class="skill-progress">
+                            <div class="progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
                 <h3>Game Design</h3>
-                <p>Perancangan mekanik game dan level design</p>
-            </div>
-            <div class="skill-card">
-                <h3>Unity</h3>
-                <p>Pengembangan game menggunakan Unity Engine</p>
-            </div>
-            <div class="skill-card">
-                <h3>C#</h3>
-                <p>Pemrograman game dengan C#</p>
-            </div>
-            <div class="skill-card">
-                <h3>Pixel Art</h3>
-                <p>Pembuatan aset visual 2D</p>
+                <div class="skill-items">
+                    <div class="skill-item" data-skill="Level Design">
+                        <i class="fas fa-map"></i>
+                        <span>Level Design</span>
+                        <div class="skill-progress">
+                            <div class="progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="UI/UX">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>UI/UX Design</span>
+                        <div class="skill-progress">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2 class="section-title">Contact</h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Nama</label>
-                <input type="text" id="name" required>
+        <h2 class="section-title glitch" data-text="Contact">Contact</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Create Something Amazing!</h3>
+                <p>Tertarik untuk berkolaborasi atau memiliki project yang ingin didiskusikan?</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>email@example.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+62 xxx-xxxx-xxxx</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lokasi Anda</span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Pesan</label>
-                <textarea id="message" rows="5" required></textarea>
-            </div>
-            <button type="submit">Kirim Pesan</button>
-        </form>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" required>
+                    <label for="name">Nama</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" required></textarea>
+                    <label for="message">Pesan</label>
+                </div>
+                <button type="submit" class="submit-btn">
+                    Kirim Pesan <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 GameDev Portfolio. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-itch-io"></i></a>
+            </div>
+            <p>&copy; 2024 GameDev Portfolio. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // Cursor Animation
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        });
+
+        document.querySelectorAll('.project-card, .skill-item, .about-content').forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>
