@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Developer Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Game Developer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="background">
-    <div class="particles"></div>
-    <div class="particles"></div>
-    <div class="particles"></div>
-    <div class="particles"></div>
-    <div class="particles"></div>
-  </div>
+    <header>
+        <h1>Nama Anda</h1>
+        <p>Game Developer</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <div class="intro">
-    <h1>Welcome to My World</h1>
-    <p>Explore the universe of game development and innovation</p>
-    <button onclick="startPortfolio()">Enter</button>
-  </div>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Tulis sedikit tentang pengalaman dan keterampilan Anda di sini.</p>
+    </section>
 
-  <script>
-    function startPortfolio() {
-      window.location.href = 'portfolio.html';  // Redirect to portfolio page
-    }
-  </script>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project">
+            <h3>Nama Proyek 1</h3>
+            <p>Deskripsi singkat proyek ini.</p>
+        </div>
+        <div class="project">
+            <h3>Nama Proyek 2</h3>
+            <p>Deskripsi singkat proyek ini.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:emailanda@example.com">emailanda@example.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nama Anda</p>
+    </footer>
 </body>
 </html>
