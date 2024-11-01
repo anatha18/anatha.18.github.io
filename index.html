@@ -3,351 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>GameDev Portfolio</title>
+    <style>
+        /* Reset dan variabel */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2a2a2a;
+            --accent-color: #ff3e3e;
+            --text-color: #ffffff;
+            --section-padding: 4rem 2rem;
+        }
+
+        /* Base styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--primary-color);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('/api/placeholder/1920/1080') center/cover;
+            padding: var(--section-padding);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: var(--section-padding);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: var(--section-padding);
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+        }
+
+        button {
+            padding: 1rem 2rem;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff5555;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Particle Effect Container -->
-    <div id="particles-js"></div>
-
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-        <div class="loading-progress">
-            <div class="progress-bar"></div>
-            <span class="progress-text">Loading... <span class="progress-percent">0%</span></span>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="game-nav">
-        <div class="nav-brand">
-            <div class="game-logo">
-                <i class="fas fa-gamepad"></i>
-                <span class="glitch-text" data-text="GAMEDEV">GAMEDEV</span>
+    <header>
+        <nav>
+            <div class="logo">GameDev</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </div>
-        </div>
-        <div class="nav-links">
-            <a href="#home" class="nav-item active" data-text="HOME">HOME</a>
-            <a href="#about" class="nav-item" data-text="ABOUT">ABOUT</a>
-            <a href="#projects" class="nav-item" data-text="PROJECTS">PROJECTS</a>
-            <a href="#skills" class="nav-item" data-text="SKILLS">SKILLS</a>
-            <a href="#contact" class="nav-item" data-text="CONTACT">CONTACT</a>
-        </div>
-        <div class="menu-toggle">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="glitch-title" data-text="GAME DEVELOPER">GAME DEVELOPER</h1>
-            <p class="cyber-text">Bringing Virtual Worlds to Life</p>
-            <div class="hero-buttons">
-                <button class="cyber-button">
-                    <span>VIEW PORTFOLIO</span>
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <div class="arrows">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <h1>Game Developer Portfolio</h1>
+            <p>Membuat game yang menarik dan inovatif</p>
+            <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                Lihat Projects
+            </button>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="section-header">
-            <h2 class="glitch-text" data-text="ABOUT ME">ABOUT ME</h2>
-        </div>
-        <div class="about-container">
-            <div class="about-image">
-                <div class="image-frame">
-                    <img src="/api/placeholder/400/400" alt="Profile">
-                    <div class="frame-corners">
-                        <span></span><span></span><span></span><span></span>
-                    </div>
-                </div>
-            </div>
-            <div class="about-content">
-                <div class="about-header">
-                    <h3>Hi, I'm <span class="highlight">Your Name</span></h3>
-                    <p>Game Developer & Designer</p>
-                </div>
-                <div class="about-text">
-                    <p>Passionate game developer with expertise in creating immersive gaming experiences. 
-                    Specializing in [Game Engine] development with a focus on [Game Genre] games.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">Games Created</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Game Jams</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="section-header">
-            <h2 class="glitch-text" data-text="LATEST GAMES">LATEST GAMES</h2>
-        </div>
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
-            <!-- Game Card 1 -->
-            <div class="game-card">
-                <div class="game-preview">
-                    <img src="/api/placeholder/400/300" alt="Game 1">
-                    <div class="game-overlay">
-                        <div class="game-actions">
-                            <a href="#" class="game-button">PLAY DEMO</a>
-                            <a href="#" class="game-button">VIEW CODE</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <h3>Cyber Quest 2077</h3>
-                    <p>Action RPG with cyberpunk elements</p>
-                    <div class="game-tags">
-                        <span>Unity</span>
-                        <span>C#</span>
-                        <span>3D</span>
-                    </div>
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="/api/placeholder/400/200" alt="Game 1" class="project-image">
+                <div class="project-info">
+                    <h3>Adventure Game</h3>
+                    <p>Game petualangan 2D dengan grafis pixel art</p>
                 </div>
             </div>
-
-            <!-- Game Card 2 -->
-            <div class="game-card">
-                <div class="game-preview">
-                    <img src="/api/placeholder/400/300" alt="Game 2">
-                    <div class="game-overlay">
-                        <div class="game-actions">
-                            <a href="#" class="game-button">PLAY DEMO</a>
-                            <a href="#" class="game-button">VIEW CODE</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <h3>Space Warriors</h3>
-                    <p>Multiplayer space combat game</p>
-                    <div class="game-tags">
-                        <span>Unreal</span>
-                        <span>C++</span>
-                        <span>Multiplayer</span>
-                    </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="/api/placeholder/400/200" alt="Game 2" class="project-image">
+                <div class="project-info">
+                    <h3>Puzzle Game</h3>
+                    <p>Game puzzle dengan mekanik unik</p>
                 </div>
             </div>
-
-            <!-- Game Card 3 -->
-            <div class="game-card">
-                <div class="game-preview">
-                    <img src="/api/placeholder/400/300" alt="Game 3">
-                    <div class="game-overlay">
-                        <div class="game-actions">
-                            <a href="#" class="game-button">PLAY DEMO</a>
-                            <a href="#" class="game-button">VIEW CODE</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <h3>Pixel Adventures</h3>
-                    <p>Retro-style platformer adventure</p>
-                    <div class="game-tags">
-                        <span>Godot</span>
-                        <span>GDScript</span>
-                        <span>2D</span>
-                    </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="/api/placeholder/400/200" alt="Game 3" class="project-image">
+                <div class="project-info">
+                    <h3>Mobile RPG</h3>
+                    <p>RPG untuk platform mobile</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <div class="section-header">
-            <h2 class="glitch-text" data-text="SKILL TREE">SKILL TREE</h2>
-        </div>
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skills</h2>
         <div class="skills-container">
-            <div class="skill-category">
-                <h3>Game Engines</h3>
-                <div class="skill-tree">
-                    <div class="skill-node" data-level="90">
-                        <i class="fab fa-unity"></i>
-                        <span>Unity</span>
-                        <div class="skill-level">
-                            <div class="level-bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill-node" data-level="75">
-                        <i class="fas fa-gamepad"></i>
-                        <span>Unreal</span>
-                        <div class="skill-level">
-                            <div class="level-bar"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="skill-card">
+                <h3>Game Design</h3>
+                <p>Perancangan mekanik game dan level design</p>
             </div>
-
-            <div class="skill-category">
-                <h3>Programming</h3>
-                <div class="skill-tree">
-                    <div class="skill-node" data-level="85">
-                        <i class="fas fa-code"></i>
-                        <span>C#</span>
-                        <div class="skill-level">
-                            <div class="level-bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill-node" data-level="80">
-                        <i class="fas fa-code"></i>
-                        <span>C++</span>
-                        <div class="skill-level">
-                            <div class="level-bar"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="skill-card">
+                <h3>Unity</h3>
+                <p>Pengembangan game menggunakan Unity Engine</p>
+            </div>
+            <div class="skill-card">
+                <h3>C#</h3>
+                <p>Pemrograman game dengan C#</p>
+            </div>
+            <div class="skill-card">
+                <h3>Pixel Art</h3>
+                <p>Pembuatan aset visual 2D</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="section-header">
-            <h2 class="glitch-text" data-text="START A QUEST">START A QUEST</h2>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Let's Create Something Amazing!</h3>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>your.email@example.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-discord"></i>
-                        <span>YourDiscordTag</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-itch-io"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                </div>
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" required>
             </div>
-            <form class="contact-form">
-                <div class="form-field">
-                    <input type="text" required>
-                    <label>Your Name</label>
-                    <span class="focus-border"></span>
-                </div>
-                <div class="form-field">
-                    <input type="email" required>
-                    <label>Your Email</label>
-                    <span class="focus-border"></span>
-                </div>
-                <div class="form-field">
-                    <textarea required></textarea>
-                    <label>Your Message</label>
-                    <span class="focus-border"></span>
-                </div>
-                <button type="submit" class="cyber-button">
-                    <span>SEND MESSAGE</span>
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </form>
-        </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Kirim Pesan</button>
+        </form>
     </section>
 
-    <!-- Footer -->
-    <footer class="game-footer">
-        <div class="footer-content">
-            <p>&copy; 2024 Game Developer Portfolio</p>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-itch-io"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2024 GameDev Portfolio. All rights reserved.</p>
     </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            let progress = 0;
-            const progressBar = document.querySelector('.progress-bar');
-            const progressText = document.querySelector('.progress-percent');
-            const loadingScreen = document.querySelector('.loading-screen');
-
-            const interval = setInterval(() => {
-                progress += 1;
-                progressBar.style.width = `${progress}%`;
-                progressText.textContent = `${progress}%`;
-
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    loadingScreen.style.opacity = '0';
-                    setTimeout(() => {
-                        loadingScreen.style.display = 'none';
-                    }, 500);
-                }
-            }, 20);
-        });
-
-        // Particles.js Config
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80 },
-                color: { value: '#ffffff' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.5 },
-                size: { value: 3 },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: '#ffffff',
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2
-                }
-            }
-        });
-
-        // Mobile Menu Toggle
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
