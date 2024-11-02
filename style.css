@@ -24,12 +24,8 @@ body {
         linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%);
     background-size: 40px 40px;
     background-position: 0 0, 20px 20px;
-    animation: backgroundMove 10s infinite linear;
 }
-@keyframes backgroundMove {
-    0% { background-position: 0 0, 20px 20px; }
-    100% { background-position: 100px 100px, 120px 120px; }
-    
+
 /* Navigation */
 nav {
     background: rgba(26, 27, 58, 0.95);
@@ -267,7 +263,7 @@ h2 {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--accent);
-    font-size: 2rem;
+    font-size:
 
 /* Contact Section */
 .contact-content {
@@ -307,19 +303,17 @@ h2 {
 }
 
 .contact-form button {
-    background: var(--gradient);
+    background: #1a1a1a;
     color: #fff;
     padding: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s;
+    transition: background-color 0.3s;
 }
 
 .contact-form button:hover {
-    background: var(--secondary);
-    color: var(--dark);
+    background: #333;
 }
 
 /* Footer */
