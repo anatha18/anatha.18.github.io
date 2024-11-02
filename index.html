@@ -10,7 +10,7 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="nav-brand">GameDev Portfolio</div>
+        <div class="nav-brand">Player One</div>
         <ul class="nav-links">
             <li><a href="#about">About Me</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -19,28 +19,26 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <h1>Game Developer</h1>
-        <p>Turning ideas into immersive gaming experiences</p>
-    </header>
-
     <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
+    <section id="about" class="about-hero">
         <div class="about-content">
-            <img src="/api/placeholder/300/300" alt="Profile Picture" class="profile-pic">
+            <div class="profile-container">
+                <img src="/api/placeholder/300/300" alt="Profile Picture" class="profile-pic">
+                <div class="level-badge">LVL 99</div>
+            </div>
             <div class="about-text">
-                <p>Hello! I'm a passionate game developer with expertise in Unity and Unreal Engine. I specialize in creating engaging gameplay mechanics and immersive worlds that captivate players.</p>
+                <h1>Game Developer</h1>
+                <p class="tagline">Building Virtual Worlds & Creating Epic Adventures</p>
+                <p class="bio">Hello! I'm a passionate game developer with expertise in Unity and Unreal Engine. I specialize in creating engaging gameplay mechanics and immersive worlds that captivate players.</p>
                 <div class="skills">
-                    <h3>Skills</h3>
+                    <h3>Skills Tree</h3>
                     <ul>
-                        <li>Unity3D</li>
-                        <li>Unreal Engine</li>
-                        <li>C#</li>
-                        <li>C++</li>
-                        <li>Game Design</li>
-                        <li>3D Modeling</li>
+                        <li class="skill-item"><i class="fas fa-gamepad"></i> Unity3D</li>
+                        <li class="skill-item"><i class="fas fa-code"></i> Unreal Engine</li>
+                        <li class="skill-item"><i class="fas fa-hashtag"></i> C#</li>
+                        <li class="skill-item"><i class="fas fa-plus"></i> C++</li>
+                        <li class="skill-item"><i class="fas fa-pencil-alt"></i> Game Design</li>
+                        <li class="skill-item"><i class="fas fa-cube"></i> 3D Modeling</li>
                     </ul>
                 </div>
             </div>
@@ -49,32 +47,62 @@
 
     <!-- Portfolio Section -->
     <section id="portfolio">
-        <h2>Portfolio</h2>
+        <h2>Quest Log</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item">
+                <div class="item-header">
+                    <span class="status">Completed</span>
+                </div>
                 <img src="/api/placeholder/400/300" alt="Game Project 1">
-                <h3>Adventure Quest</h3>
-                <p>A 3D action-adventure game built with Unity</p>
+                <div class="item-content">
+                    <h3>Adventure Quest</h3>
+                    <p>A 3D action-adventure game built with Unity</p>
+                    <div class="tags">
+                        <span>Unity</span>
+                        <span>3D</span>
+                        <span>Action</span>
+                    </div>
+                </div>
             </div>
             <div class="portfolio-item">
+                <div class="item-header">
+                    <span class="status">Completed</span>
+                </div>
                 <img src="/api/placeholder/400/300" alt="Game Project 2">
-                <h3>Space Shooter</h3>
-                <p>Mobile arcade game developed using Unreal Engine</p>
+                <div class="item-content">
+                    <h3>Space Shooter</h3>
+                    <p>Mobile arcade game developed using Unreal Engine</p>
+                    <div class="tags">
+                        <span>Unreal</span>
+                        <span>Mobile</span>
+                        <span>Arcade</span>
+                    </div>
+                </div>
             </div>
             <div class="portfolio-item">
+                <div class="item-header">
+                    <span class="status">In Progress</span>
+                </div>
                 <img src="/api/placeholder/400/300" alt="Game Project 3">
-                <h3>RPG World</h3>
-                <p>Massive multiplayer RPG with custom mechanics</p>
+                <div class="item-content">
+                    <h3>RPG World</h3>
+                    <p>Massive multiplayer RPG with custom mechanics</p>
+                    <div class="tags">
+                        <span>Unity</span>
+                        <span>MMO</span>
+                        <span>RPG</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Resume Section -->
     <section id="resume">
-        <h2>Resume</h2>
+        <h2>Achievement Log</h2>
         <div class="resume-content">
             <div class="experience">
-                <h3>Work Experience</h3>
+                <h3>Quest History</h3>
                 <div class="exp-item">
                     <h4>Senior Game Developer - Game Studio X</h4>
                     <p class="date">2020 - Present</p>
@@ -96,7 +124,7 @@
             </div>
             
             <div class="education">
-                <h3>Education</h3>
+                <h3>Training Grounds</h3>
                 <div class="edu-item">
                     <h4>Bachelor in Computer Science</h4>
                     <p>University of Technology</p>
@@ -108,11 +136,11 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact</h2>
+        <h2>Send a Message</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <h3>Get in Touch</h3>
-                <p>Interested in collaborating? Let's create something amazing together!</p>
+                <h3>Player Stats</h3>
+                <p>Ready to join forces? Let's create something epic together!</p>
                 <div class="contact-details">
                     <p><i class="fas fa-envelope"></i> email@example.com</p>
                     <p><i class="fas fa-phone"></i> +1 234 567 890</p>
@@ -120,10 +148,10 @@
                 </div>
             </div>
             <form class="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit">Send Message</button>
+                <input type="text" placeholder="Enter Your Name" required>
+                <input type="email" placeholder="Enter Your Email" required>
+                <textarea placeholder="Type Your Message"></textarea>
+                <button type="submit">Send <i class="fas fa-paper-plane"></i></button>
             </form>
         </div>
     </section>
@@ -135,7 +163,7 @@
             <a href="#"><i class="fab fa-linkedin"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>&copy; 2024 Game Developer Portfolio. All rights reserved.</p>
+        <p>Press Start to Continue © 2024</p>
     </footer>
 </body>
 </html>
