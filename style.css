@@ -356,6 +356,11 @@ footer {
     color: #fff;
     text-align: center;
     padding: 2rem;
+    transition: transform 0.3s;
+}
+
+footer:hover {
+  transform: translateY(-5px);
 }
 
 .social-links {
