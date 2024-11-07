@@ -26,39 +26,6 @@ body {
     background-position: 0 0, 20px 20px;
 }
 
-/* Navigation */
-nav {
-    background: rgba(26, 27, 58, 0.95);
-    padding: 1rem 5%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 3px solid var(--primary);
-}
-
-.nav-brand {
-    color: var(--primary);
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0 1rem;
-    position: relative;
-}
 
 /* About Section */
 .about-hero {
