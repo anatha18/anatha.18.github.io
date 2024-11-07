@@ -79,13 +79,13 @@ body {
     flex: 1;
 }
 
-.about-text h1 {
+/* .about-text h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     background: var(--gradient);
     -webkit-background-clip: text;
     color: transparent;
-}
+} */
 
 .tagline {
     font-size: 1.5rem;
@@ -212,7 +212,7 @@ h2 {
     margin-bottom: 3rem;
     color: var(--accent);
     font-size:2.5rem;
-
+}
 /* Contact Section */
 #contact {
     display: flex;
