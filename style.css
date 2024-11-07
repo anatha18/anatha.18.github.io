@@ -181,7 +181,7 @@ nav {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -312,6 +312,7 @@ h2 {
 .contact-form textarea {
     width: 100%;
     padding: 1rem;
+    margin-bottom: 1rem;
     font-size: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
@@ -332,9 +333,9 @@ h2 {
 }
 
 .contact-form button {
-    padding: 1rem;
-    background: var(--gradient);
-    color: #fff;
+    padding: 1rem 2 rem;
+    background: var(--primary);
+    color: white;
     font-size: 1rem;
     border: none;
     border-radius: 10px;
