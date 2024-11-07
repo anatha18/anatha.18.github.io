@@ -54,13 +54,10 @@ nav {
 }
 
 .nav-links li a {
-    color: var(--light);
+    color: #ffffff;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
-    transition: all 0.3s;
+    padding: 0 1rem;
     position: relative;
-    overflow: hidden;
 }
 
 .nav-links li a:before {
