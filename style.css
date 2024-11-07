@@ -25,6 +25,7 @@ body {
     background-size: 40px 40px;
     background-position: 0 0, 20px 20px;
 }
+
 /* Navigation */
 nav {
     background: rgba(26, 27, 58, 0.95);
@@ -180,7 +181,7 @@ nav {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
@@ -258,12 +259,6 @@ nav {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--accent);
-    font-size:2.5rem;
-} */
 /* Contact Section */
 #contact {
     display: flex;
@@ -311,7 +306,6 @@ nav {
 .contact-form textarea {
     width: 100%;
     padding: 1rem;
-    margin-bottom: 1rem;
     font-size: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
@@ -332,9 +326,9 @@ nav {
 }
 
 .contact-form button {
-    padding: 1rem 2 rem;
-    background: var(--primary);
-    color: white;
+    padding: 1rem;
+    background: var(--gradient);
+    color: #fff;
     font-size: 1rem;
     border: none;
     border-radius: 10px;
