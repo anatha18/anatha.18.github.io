@@ -92,7 +92,7 @@ nav {
 .nav-links a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-
+}
 /* About Section */
 .about-hero {
     min-height: 100vh;
