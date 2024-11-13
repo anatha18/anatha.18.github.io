@@ -356,7 +356,7 @@ section::before {
     align-items: center;
     gap: 2rem;
     width: 100%;
-    max-width: 700px; /* Limits form width */
+    max-width: 500px; /* Limits form width */
     background: rgba(255, 255, 255, 0.1); /* Semi-transparent backdrop */
     padding: 2rem;
     border-radius: 15px;
