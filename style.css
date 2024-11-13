@@ -234,6 +234,54 @@ section::before {
     margin-right: 0.5rem;
     font-size: 0.9rem;
 }
+/* other Project Section */
+.other-projects-title {
+    margin-top: 4rem;
+    color: var(--light);
+    text-align: center;
+}
+
+.other-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.15);
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.project-content h3 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.project-content p {
+    color: var(--light);
+    margin-bottom: 1rem;
+}
+
 
 /* Resume Section */
 #resume {
@@ -256,6 +304,39 @@ section::before {
     background: rgba(255,255,255,0.05);
     border-radius: 15px;
     border: 1px solid rgba(255,255,255,0.1);
+}
+.resume-download {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+}
+
+.resume-download h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.download-btn i {
+    margin-right: 0.5rem;
 }
 
 /* Contact Section */
