@@ -3,310 +3,456 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameDev Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Anatha Pindhika — Game Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-brand">Anatha Pindhika</div>
-        <ul class="nav-links">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Background canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ===================================================
+         NAV
+    ==================================================== -->
+    <nav id="navbar">
+        <div class="nav-brand">A.Pindhika</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about"     class="nav-link">About</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#resume"    class="nav-link">Resume</a></li>
+            <li><a href="#contact"   class="nav-link">Contact</a></li>
         </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
-    <!-- About Section -->
-    <section id="about" class="about-hero">
-        <div class="about-content">
-            <div class="profile-container">
-                <img src="asset/boy.png" alt="Profile Picture" class="profile-pic">
-                <div class="level-badge">LVL 99</div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about"     class="mob-link">About</a>
+        <a href="#portfolio" class="mob-link">Portfolio</a>
+        <a href="#resume"    class="mob-link">Resume</a>
+        <a href="#contact"   class="mob-link">Contact</a>
+    </div>
+
+    <!-- ===================================================
+         ABOUT
+    ==================================================== -->
+    <section id="about">
+        <div class="about-inner">
+
+            <!-- Avatar + Stat Bars -->
+            <div class="profile-wrap reveal">
+                <div class="profile-frame">
+                    <img src="asset/boy.png" alt="Anatha Pindhika">
+                    <div class="lvl-badge">LVL 99</div>
+                </div>
+
+                <div class="stat-bars" id="statBars">
+                    <div class="stat-row">
+                        <span class="stat-label">STR</span>
+                        <div class="stat-track"><div class="stat-fill red"  data-val="92"></div></div>
+                        <span class="stat-num">92</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">DEX</span>
+                        <div class="stat-track"><div class="stat-fill cyan" data-val="88"></div></div>
+                        <span class="stat-num">88</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">INT</span>
+                        <div class="stat-track"><div class="stat-fill yel"  data-val="95"></div></div>
+                        <span class="stat-num">95</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">CRT</span>
+                        <div class="stat-track"><div class="stat-fill red"  data-val="85"></div></div>
+                        <span class="stat-num">85</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- Bio -->
             <div class="about-text">
-                <h1>Anatha Pindhika</h1>
-                <p class="tagline">Game Developer</p>
-                <p class="bio">I am a Computer Science graduate with a concentration in Game Application and Technology, currently advancing my skills in a Master of Computer Science (MTI) program at Binus University, specializing in Data Science. I have a strong technical foundation in Game Development, AR, and VR, enhanced through hands-on experience as an intern at FxMedia, where I gained in-depth knowledge of AR and VR technologies. My passion for immersive experiences extends to developing games on platforms like Roblox, where I have contributed to creating engaging virtual worlds.
+                <div class="greeting reveal reveal-delay-1">// Hello World!</div>
+                <h1 class="reveal reveal-delay-2">
+                    <span class="glitch" data-text="ANATHA">ANATHA</span><br>
+                    PINDHIKA
+                </h1>
+                <p class="tagline reveal reveal-delay-3">[ Game Developer ]</p>
+                <p class="bio reveal reveal-delay-4">
+                    Computer Science graduate specializing in Game Application & Technology,
+                    currently pursuing an MTI (Master of Computer Science) at Binus University with a
+                    focus on Data Science. Strong foundation in Game Development, AR, and VR through
+                    hands-on experience at FxMedia and independent projects on Unity, Unreal Engine, and Roblox.
+                </p>
 
-</p>
-                <div class="skills">
-                    <h3>Skills Tree</h3>
-                    <ul>
-                        <li class="skill-item"><i class="fas fa-gamepad"></i> Unity3D</li>
-                        <li class="skill-item"><i class="fas fa-code"></i> Unreal Engine</li>
-                        <li class="skill-item"><i class="fas fa-hashtag"></i> C#</li>
-                        <li class="skill-item"><i class="fas fa-plus"></i> C++</li>
-                        <li class="skill-item"><i class="fas fa-pencil-alt"></i> Game Design</li>
-                        <li class="skill-item"><i class="fas fa-cube"></i> AR/VR</li>
-                    </ul>
+                <p class="skills-title reveal">— Skills Tree</p>
+                <div class="skill-chips reveal">
+                    <span class="chip"><i class="fas fa-gamepad"></i> Unity3D</span>
+                    <span class="chip"><i class="fas fa-cube"></i> Unreal Engine</span>
+                    <span class="chip"><i class="fas fa-hashtag"></i> C#</span>
+                    <span class="chip"><i class="fas fa-plus"></i> C++</span>
+                    <span class="chip"><i class="fas fa-pencil-alt"></i> Game Design</span>
+                    <span class="chip"><i class="fas fa-vr-cardboard"></i> AR / VR</span>
+                    <span class="chip"><i class="fas fa-layer-group"></i> Roblox Studio</span>
                 </div>
             </div>
+
+        </div>
+
+        <div class="scroll-hint">
+            <span>SCROLL</span>
+            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- ===================================================
+         PORTFOLIO
+    ==================================================== -->
     <section id="portfolio">
-        <h2>Quest Log</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <div class="item-header">
-                    <span class="status">Completed</span>
+        <div class="sec-head">
+            <p class="sec-label">// Quest Log</p>
+            <h2 class="sec-title reveal">MY <span>PROJECTS</span></h2>
+            <div class="sec-line"></div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar reveal">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="unity">Unity</button>
+            <button class="filter-btn" data-filter="roblox">Roblox</button>
+            <button class="filter-btn" data-filter="ar">AR / VR</button>
+            <button class="filter-btn" data-filter="multiplayer">Multiplayer</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioGrid">
+
+            <div class="card reveal" data-tags="unity platformer">
+                <div class="card-thumb">
+                    <img src="asset/portogif4.gif" alt="Elemental Ninja">
+                    <span class="card-status done">Completed</span>
                 </div>
-                <img src="asset/portogif4.gif" alt="Game Project 1">
-                <div class="item-content">
+                <div class="card-body">
                     <h3>Elemental Ninja</h3>
-                    <p>2D Game Platformer</p>
-                    <div class="tags">
-                        <span>Unity</span>
-                        <span>3D</span>
-                        <span>Platformer Game</span>
+                    <p>2D platformer game built in Unity with elemental combat mechanics.</p>
+                    <div class="tag-list">
+                        <span class="tag">Unity</span>
+                        <span class="tag">Platformer</span>
+                        <span class="tag">2D</span>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <div class="item-header">
-                    <span class="status">Completed</span>
+
+            <div class="card reveal reveal-delay-1" data-tags="ar unity">
+                <div class="card-thumb">
+                    <img src="asset/Portogif2.gif" alt="AR Hospital">
+                    <span class="card-status done">Completed</span>
                 </div>
-                <img src="asset/Portogif2.gif" alt="Game Project 2">
-                <div class="item-content">
+                <div class="card-body">
                     <h3>AR Hospital</h3>
-                    <p>Intern Project using TiltFive and developed in unity</p>
-                    <div class="tags">
-                        <span>AR</span>
-                        <span>Medical</span>
-                        <span>TitlFive</span>
+                    <p>Intern project using TiltFive AR platform — interactive hospital simulation.</p>
+                    <div class="tag-list">
+                        <span class="tag">AR</span>
+                        <span class="tag">TiltFive</span>
+                        <span class="tag">Unity</span>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <div class="item-header">
-                    <span class="status">Completed</span>
+
+            <div class="card reveal reveal-delay-2" data-tags="ar unity">
+                <div class="card-thumb">
+                    <img src="asset/portogif5.gif" alt="AR Anatomy">
+                    <span class="card-status done">Completed</span>
                 </div>
-                <img src="asset/portogif5.gif" alt="Game Project 3">
-                <div class="item-content">
+                <div class="card-body">
                     <h3>AR Anatomy</h3>
-                    <p>Intern project using TiltFive</p>
-                    <div class="tags">
-                        <span>AR</span>
-                        <span>Anatomy</span>
-                        <span>TiltFive</span>
+                    <p>TiltFive-based AR experience exploring human anatomy in 3D space.</p>
+                    <div class="tag-list">
+                        <span class="tag">AR</span>
+                        <span class="tag">Anatomy</span>
+                        <span class="tag">TiltFive</span>
                     </div>
                 </div>
             </div>
-                        <div class="portfolio-item">
-                <div class="item-header">
-                    <span class="status">Completed</span>
+
+            <div class="card reveal" data-tags="ar unity mobile">
+                <div class="card-thumb">
+                    <img src="asset/AR.png" alt="AR Anatomy Education">
+                    <span class="card-status done">Completed</span>
                 </div>
-                <img src="asset/AR.png" alt="Game Project 4">
-                <div class="item-content">
+                <div class="card-body">
                     <h3>AR Anatomy Education</h3>
-                    <p>This is a project that I developed myself for my undergraduate thesis, namely creating an AR game that contains quizzes to help improve understanding of body anatomy.</p>
-                    <div class="tags">
-                        <span>AR</span>
-                        <span>Unity</span>
-                        <span>Mobile</span>
+                    <p>Undergraduate thesis — mobile AR quiz game for human anatomy learning.</p>
+                    <div class="tag-list">
+                        <span class="tag">AR</span>
+                        <span class="tag">Unity</span>
+                        <span class="tag">Mobile</span>
                     </div>
                 </div>
             </div>
-                        <div class="portfolio-item">
-                <div class="item-header">
-                    <span class="status">Completed</span>
+
+            <div class="card reveal reveal-delay-1" data-tags="roblox multiplayer">
+                <div class="card-thumb">
+                    <img src="asset/portogif3.gif" alt="Changi Airport">
+                    <span class="card-status done">Completed</span>
                 </div>
-                <img src="asset/portogif3.gif" alt="Game Project 5">
-                <div class="item-content">
+                <div class="card-body">
                     <h3>Changi Airport</h3>
-                    <p>Intern Project Developed Roblox Game</p>
-                    <div class="tags">
-                        <span>Roblox</span>
-                        <span>3D</span>
-                        <span>Multiplayer</span>
+                    <p>Intern project — full Roblox recreation of Changi Airport with multiplayer gameplay.</p>
+                    <div class="tag-list">
+                        <span class="tag">Roblox</span>
+                        <span class="tag">Multiplayer</span>
+                        <span class="tag">3D</span>
                     </div>
                 </div>
             </div>
-                            <div class="portfolio-item">
-                <div class="item-header">
-                    <span class="status">Completed</span>
+
+            <div class="card reveal reveal-delay-2" data-tags="roblox multiplayer">
+                <div class="card-thumb">
+                    <img src="asset/cnyasset.png" alt="Chinese New Year">
+                    <span class="card-status done">Completed</span>
                 </div>
-                <img src="asset/cnyasset.png" alt="Game Project 6">
-                <div class="item-content">
+                <div class="card-body">
                     <h3>Chinese New Year</h3>
-                    <p>Intern Project Developed Roblox Game</p>
-                    <div class="tags">
-                        <span>Roblox</span>
-                        <span>3D</span>
-                        <span>Multiplayer</span>
+                    <p>Festive Roblox experience developed as an intern project.</p>
+                    <div class="tag-list">
+                        <span class="tag">Roblox</span>
+                        <span class="tag">3D</span>
+                        <span class="tag">Event</span>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <div class="item-header">
-                    <span class="status">Completed</span>
+
+            <div class="card reveal" data-tags="unity multiplayer fps">
+                <div class="card-thumb">
+                    <img src="asset/BLOCKCHAIN.png" alt="Lunar Descent">
+                    <span class="card-status done">Completed</span>
                 </div>
-                <img src="asset/BLOCKCHAIN.png" alt="Game Project 7">
-                <div class="item-content">
+                <div class="card-body">
                     <h3>Lunar Descent</h3>
-                    <p>This is a project that I developed myself for my Masters thesis, namely creating a Multiplayer FPS game that implements Blockchain Technology for all transactions.</p>
-                    <div class="tags">
-                        <span>FPS</span>
-                        <span>Multiplayer</span>
-                        <span>Blockchain</span>
+                    <p>Master's thesis — Multiplayer FPS integrating Blockchain technology for in-game transactions.</p>
+                    <div class="tag-list">
+                        <span class="tag">FPS</span>
+                        <span class="tag">Multiplayer</span>
+                        <span class="tag">Blockchain</span>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <div class="item-header">
-                    <span class="status">Completed</span>
+
+            <div class="card reveal reveal-delay-1" data-tags="roblox puzzle">
+                <div class="card-thumb">
+                    <img src="asset/proto.png" alt="Sciencescape">
+                    <span class="card-status done">Completed</span>
                 </div>
-                <img src="asset/proto.png" alt="Game Project 8">
-                <div class="item-content">
+                <div class="card-body">
                     <h3>Sciencescape</h3>
-                    <p>This is my freelance project to create a puzzle game in Roblox that has a physics science concept. In this game there are several puzzles such as the concept of magnetic kinetics, pulleys and also the concept of electricity.</p>
-                    <div class="tags">
-                        <span>Simulator</span>
-                        <span>Roblox</span>
-                        <span>puzzle</span>
+                    <p>Freelance Roblox puzzle game based on physics — magnetism, pulleys, and electricity mechanics.</p>
+                    <div class="tag-list">
+                        <span class="tag">Roblox</span>
+                        <span class="tag">Puzzle</span>
+                        <span class="tag">Physics</span>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <div class="item-header">
-                    <span class="status">On-Progress</span>
+
+            <div class="card reveal reveal-delay-2" data-tags="unity 2d">
+                <div class="card-thumb">
+                    <img src="asset/farmpil.jpg" alt="FarmVile">
+                    <span class="card-status wip">In Progress</span>
                 </div>
-                <img src="asset/farmpil.jpg" alt="Game Project 9">
-                <div class="item-content">
+                <div class="card-body">
                     <h3>FarmVile</h3>
-                    <p>This is a game jam project that my friend and I are currently participating in with the theme of old games and fusion games.</p>
-                    <div class="tags">
-                        <span>Simulator</span>
-                        <span>Farming</span>
-                        <span>2D Game</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <h2 class="other-projects-title">Other Projects</h2>
-        <div class="other-projects">
-            <div class="portfolio-item">
-                <img src="asset/holo.jpeg" alt="Game Project 6">
-                <div class="project-content">
-                    <h3>Hololink</h3>
-                    <p>Make Augmented Reality in platform web</p>
-                    <div class="tags">
-                        <span>AR</span>
-                        <span>Web</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="portfolio-item">
-                <img src="asset/VFXTESTING.gif" alt="Game Project 6">
-                <div class="project-content">
-                    <h3>VFX - Unreal Engine</h3>
-                    <p>Making 3D Visual Effect in Unreal Engine</p>
-                    <div class="tags">
-                        <span>Unreal Engine</span>
-                        <span>VFX</span>
+                    <p>Game jam entry fusing old-school farming sim with modern fusion gameplay.</p>
+                    <div class="tag-list">
+                        <span class="tag">Simulator</span>
+                        <span class="tag">Farming</span>
+                        <span class="tag">2D</span>
                     </div>
                 </div>
             </div>
 
-            <div class="portfolio-item">
-                <img src="asset/web.png" alt="Game Project 6">
-                <div class="project-content">
-                    <h3>Web Development</h3>
-                    <p>Website Portofolio</p>
-                    <div class="tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
+        </div>
+
+        <!-- Other / Side Projects -->
+        <div class="other-sec">
+            <div class="sec-head" style="padding: 60px 0 40px;">
+                <p class="sec-label">// Side Quests</p>
+                <h2 class="sec-title reveal">OTHER <span>PROJECTS</span></h2>
+                <div class="sec-line"></div>
+            </div>
+            <div class="other-grid">
+                <div class="card reveal">
+                    <div class="card-thumb">
+                        <img src="asset/holo.jpeg" alt="Hololink">
+                    </div>
+                    <div class="card-body">
+                        <h3>Hololink</h3>
+                        <p>Web-based Augmented Reality platform project.</p>
+                        <div class="tag-list"><span class="tag">AR</span><span class="tag">Web</span></div>
+                    </div>
+                </div>
+                <div class="card reveal reveal-delay-1">
+                    <div class="card-thumb">
+                        <img src="asset/VFXTESTING.gif" alt="VFX Unreal">
+                    </div>
+                    <div class="card-body">
+                        <h3>VFX — Unreal Engine</h3>
+                        <p>3D Visual Effects experimentation in Unreal Engine.</p>
+                        <div class="tag-list"><span class="tag">Unreal Engine</span><span class="tag">VFX</span></div>
+                    </div>
+                </div>
+                <div class="card reveal reveal-delay-2">
+                    <div class="card-thumb">
+                        <img src="asset/web.png" alt="Web Dev">
+                    </div>
+                    <div class="card-body">
+                        <h3>Web Development</h3>
+                        <p>This portfolio website — built from scratch.</p>
+                        <div class="tag-list"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resume Section -->
+    <!-- ===================================================
+         RESUME
+    ==================================================== -->
     <section id="resume">
-        <h2>Resume</h2>
-        <div class="resume-content">
-            <div class="experience">
-                <h3>Quest History</h3>
-                <div class="exp-item">
-                    <h4>Intern Unity Developer - FxMedia Technology </h4>
-                    <p class="date">Feb 2023 - Nov 2023</p>
+        <div class="sec-head">
+            <p class="sec-label">// Character Sheet</p>
+            <h2 class="sec-title reveal">MY <span>RESUME</span></h2>
+            <div class="sec-line"></div>
+        </div>
+
+        <div class="resume-grid">
+
+            <div class="resume-col">
+                <h3>Experience</h3>
+                <div class="timeline-item reveal">
+                    <h4>Intern Unity Developer — FxMedia Technology</h4>
+                    <p class="date">Feb 2023 — Nov 2023</p>
                     <ul>
-                        <li>Developed augmented reality (AR) games in Unity using TiltFive and tested AR platforms, delivering immersive and interactive experiences.</li>
-                        <li>Tested and integrated AI SDKs, implementing AI-driven behaviors in non-playable characters (NPCs) to enhance game realism and engagement.</li>
-                        <li>Collaborated with a team on the Roblox Studio, contributing to the development and refinement of games for an active player community.</li>
+                        <li>Developed AR games in Unity using TiltFive platform.</li>
+                        <li>Tested and integrated AI SDKs for NPC behavior.</li>
+                        <li>Collaborated on Roblox Studio game development.</li>
                     </ul>
                 </div>
-                <div class="exp-item">
-                    <h4>Start Up Export-Import - Part of Organization</h4>
-                    <p class="date">Jan 2022 - Apr 2023</p>
+                <div class="timeline-item reveal reveal-delay-1">
+                    <h4>Start Up Export-Import — Organization</h4>
+                    <p class="date">Jan 2022 — Apr 2023</p>
                     <ul>
-                        <li>Managed all changes that occur on social media and websites.</li>
-                        <li>Looking for buyers and also expanding relations with suppliers.</li>
+                        <li>Managed social media and website content.</li>
+                        <li>Sourced buyers and expanded supplier relations.</li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="education">
-                <h3>Training Grounds</h3>
-                <div class="edu-item">
-                    <h4>Game Application and Technology - Bachelor in Computer Science</h4>
-                    <p>Bina Nusantara University</p>
-                    <p class="date">2020 - 2024</p>
+
+            <div class="resume-col">
+                <h3>Education</h3>
+                <div class="timeline-item reveal">
+                    <h4>Master of Computer Science (MTI)</h4>
+                    <p class="date">2024 — Present</p>
+                    <p>Bina Nusantara University — Specialization: Data Science</p>
+                </div>
+                <div class="timeline-item reveal reveal-delay-1">
+                    <h4>Bachelor in Computer Science</h4>
+                    <p class="date">2020 — 2024</p>
+                    <p>Bina Nusantara University — Game Application & Technology</p>
+                </div>
+                <div class="download-wrap reveal reveal-delay-2">
+                    <a href="asset/CV2.pdf" download class="dl-btn">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
             </div>
-                 <div class="resume-download">
-                <h3>Download Full Resume</h3>
-                <a href="asset/CV2.pdf" download class="download-btn">
-                    <i class="fas fa-download"></i> Download CV
-                </a>
-            </div>
+
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ===================================================
+         CONTACT
+    ==================================================== -->
     <section id="contact">
-        <h2></h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Player Stats</h3>
-                <p>Ready to join forces? Let's create something epic together!</p>
+        <div class="sec-head">
+            <p class="sec-label">// Player 2 Enter</p>
+            <h2 class="sec-title reveal">GET IN <span>TOUCH</span></h2>
+            <div class="sec-line"></div>
+        </div>
+
+        <div class="contact-inner">
+
+            <div class="contact-info reveal">
+                <p>Ready to join forces? Let's build something epic together. I'm open for freelance projects, collaborations, and full-time roles.</p>
                 <div class="contact-details">
-                    <p><i class="fas fa-envelope"></i> anthapindhika18@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +62 812 8424 8210</p>
-                    <p><i class="fas fa-location-dot"></i> Jakarta Utara, DKI Jakarta</p>
+                    <div class="contact-row">
+                        <i class="fas fa-envelope"></i>
+                        <span>anthapindhika18@gmail.com</span>
+                    </div>
+                    <div class="contact-row">
+                        <i class="fas fa-phone"></i>
+                        <span>+62 812 8424 8210</span>
+                    </div>
+                    <div class="contact-row">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Jakarta Utara, DKI Jakarta</span>
+                    </div>
                 </div>
             </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Enter Your Name" required>
-                <input type="email" placeholder="Enter Your Email" required>
-                <textarea placeholder="Type Your Message"></textarea>
-                <button type="submit">Send <i class="fas fa-paper-plane"></i></button>
+
+            <form class="contact-form reveal reveal-delay-1" id="contactForm" novalidate>
+                <div class="form-field">
+                    <input type="text" id="fname" placeholder="Your Name" required>
+                </div>
+                <div class="form-field">
+                    <input type="email" id="femail" placeholder="Your Email" required>
+                </div>
+                <div class="form-field">
+                    <textarea id="fmsg" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    Send Message <i class="fas fa-paper-plane"></i>
+                </button>
+                <div class="form-msg" id="formMsg">✓ Message sent! I'll get back to you soon.</div>
             </form>
+
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===================================================
+         FOOTER
+    ==================================================== -->
     <footer>
         <div class="social-links">
-            <a href="https://github.com/anatha18/"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/anatha-p/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://x.com/APindhika"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/anatha18/" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/anatha-p/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/APindhika" target="_blank" aria-label="Twitter/X">
+                <i class="fab fa-twitter"></i>
+            </a>
         </div>
-        <p>Press Start to Continue © 2025</p>
+        <p>Press Start to Continue © 2025 — Anatha Pindhika</p>
     </footer>
+
+    <!-- JavaScript — loaded last so DOM is ready -->
+    <script src="script.js"></script>
+
 </body>
 </html>
-
-
-
-
-
-
-
